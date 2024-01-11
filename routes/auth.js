@@ -14,21 +14,21 @@ router.post("/login", storeRedirectToInSession, passport.authenticate('local', {
     keepSessionInfo: true
 }), authController.postLogin);
 
-router.get("/login/google", storeRedirectToInSession, passport.authenticate("google", {
-    scope: ['profile', 'email']
-}));
-router.get("/login/google/redirect", passport.authenticate("google", {
-    failureRedirect: "/login",
-    failureFlash: true ,
-    keepSessionInfo: true
-}), authController.postLogin);
+// router.get("/login/google", storeRedirectToInSession, passport.authenticate("google", {
+//     scope: ['profile', 'email']
+// }));
+// router.get("/login/google/redirect", passport.authenticate("google", {
+//     failureRedirect: "/login",
+//     failureFlash: true ,
+//     keepSessionInfo: true
+// }), authController.postLogin);
 
-router.get("/login/facebook", storeRedirectToInSession, passport.authenticate("facebook", {scope : ['email'] }));
-router.get("/login/facebook/callback", passport.authenticate("facebook", {
-    failureRedirect: "/login",
-    failureFlash: true,
-    keepSessionInfo: true
-}), authController.postLogin);
+// router.get("/login/facebook", storeRedirectToInSession, passport.authenticate("facebook", {scope : ['email'] }));
+// router.get("/login/facebook/callback", passport.authenticate("facebook", {
+//     failureRedirect: "/login",
+//     failureFlash: true,
+//     keepSessionInfo: true
+// }), authController.postLogin);
 
 
 router.get("/logout", authUser, authController.getLogout);
