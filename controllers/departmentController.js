@@ -145,7 +145,7 @@ controller.accountManagement = async (req, res) => {
 
   const accountTypes = ["Phuong", "Quan", "So"];
   const [districts] = await sequelize.query(
-    `SELECT DISTINCT district FROM Areas`
+    `SELECT DISTINCT district FROM areas`
   );
   let accounts = await Account.findAll(options);
   let flag = false;
@@ -452,7 +452,7 @@ controller.viewAdsRequests = async (req, res) => {
   }
 
   const [districts] = await sequelize.query(
-    `SELECT DISTINCT district FROM Areas`
+    `SELECT DISTINCT district FROM areas`
   );
   let permitRequests = await PermitRequest.findAll({
     include: [
@@ -585,7 +585,7 @@ controller.viewReports = async (req, res) => {
   }
 
   const [districts] = await sequelize.query(
-    `SELECT DISTINCT district FROM Areas`
+    `SELECT DISTINCT district FROM areas`
   );
 
   let reports;
@@ -910,7 +910,7 @@ controller.viewEditRequest = async (req, res) => {
   }
 
   const [districts] = await sequelize.query(
-    `SELECT DISTINCT district FROM Areas`
+    `SELECT DISTINCT district FROM areas`
   );
   let boardRequest;
   if (currentStatus !== "") {
@@ -1147,7 +1147,7 @@ controller.adplaceManagement = async (req, res) => {
   }
 
   const [districts] = await sequelize.query(
-    `SELECT DISTINCT district FROM Areas ORDER BY district`
+    `SELECT DISTINCT district FROM areas ORDER BY district`
   );
   let page = isNaN(req.query.page) ? 1 : parseInt(req.query.page);
   let flag = false;
@@ -1429,7 +1429,7 @@ controller.getAreas = async (req, res) => {
     offset: (page - 1) * perPage,
   });
   const [districts] = await sequelize.query(
-    `SELECT DISTINCT district FROM Areas`
+    `SELECT DISTINCT district FROM areas`
   );
   const message = req.flash("manageAreaMsg");
 
@@ -1594,7 +1594,7 @@ controller.boardManagement = async (req, res) => {
   }
 
   const [districts] = await sequelize.query(
-    `SELECT DISTINCT district FROM Areas ORDER BY district`
+    `SELECT DISTINCT district FROM areas ORDER BY district`
   );
 
   let page = isNaN(req.query.page) ? 1 : parseInt(req.query.page);
@@ -2737,7 +2737,7 @@ controller.viewEditAdplaceRequest = async (req, res) => {
   const status = ["Chờ phê duyệt", "Đã được duyệt", "Bị từ chối"];
 
   const [districts] = await sequelize.query(
-    `SELECT DISTINCT district FROM Areas`
+    `SELECT DISTINCT district FROM areas`
   );
 
   let adsPlacementRequests;

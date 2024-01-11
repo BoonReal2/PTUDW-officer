@@ -31,8 +31,11 @@
       "collate": "utf8_general_ci", 
       "timestamps": true
     },
-    "dialectOptions": {
-      "ssl": {}
+    "dialectOptions":{
+      "ssl": {
+        "require":true,
+        "rejectUnauthorized":false
+      }
     }
   }
 }
