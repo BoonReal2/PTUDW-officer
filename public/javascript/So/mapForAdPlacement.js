@@ -31,7 +31,7 @@ const reportedPopup = new mapboxgl.Popup({
   closeOnClick: false,
 });
 
-const serverPath = "http://localhost:5000";
+const serverPath = "https://ptudw-officer.onrender.com/";
 
 const inspectCluster = (e, layer) => {
   const features = map.queryRenderedFeatures(e.point, {
